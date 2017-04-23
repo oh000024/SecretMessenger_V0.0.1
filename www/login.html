@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!--	<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com http://griffis.edumedia.ca  'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src * data: content: griffis.edumedia.ca  placeholdit.imgix.net placehold.it ;" />-->
+	<meta http-equiv="Content-Security-Policy" content="default-src http://griffis.edumedia.ca https://griffis.edumedia.ca 'self' data: gap: ;style-src 'self' 'unsafe-inline' ;img-src 'self' https: " />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="msapplication-tap-highlight" content="no" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+
+	<!-- Include the compiled Ratchet CSS -->
+	<link href="css/ratchet.min.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<title>Tell me something</title>
+
+</head>
+
+<body>
+	<header class="bar bar-nav">
+		<!--
+		<a class="btn btn-link btn-nav pull-right" href="#ReviewModal">
+                Secret Messenger
+                <span class="icon icon-compose"></span>
+            </a>
+-->
+		<h1 class="title">Secret Messenger</h1>
+	</header>
+	<!--
+        <nav class="bar bar-tab">
+            <a class="tab-item">
+                <span class="icon icon-plus"></span>
+                <span class="tab-label">Add Person</span>
+            </a>
+        </nav>
+        -->
+	<div class="content" id="Login">
+		<!-- read through localStorage for contacts -->
+		<form>
+			<div class="input-row">
+				<label>Full name</label>
+				<input type="text" id="user" placeholder="Full Name">
+			</div>
+			<div class="input-row">
+				<label>Email</label>
+				<input type="email" id="email" placeholder="ratchetframework@gmail.com">
+			</div>
+		</form>
+		<!--
+		<div>
+			<button class="btn btn-positive btn-block">Choose existing</button>
+		</div>
+-->
+		<button class="btn btn-negative btn-block" id="login">Log in</button>
+		<button class="btn btn-primary btn-block" id="register">Register</button>
+
+		<div id="MessageListModal" class="modal">
+			<header class="bar bar-nav">
+				<a class="btn btn-link btn-nav pull-right" href="#SendModal">Send</a>
+				<h1 class="title">Messenger</h1>
+			</header>
+
+			<div class="content" id="messagelist">
+				<!-- read through localStorage for contacts -->
+				<ul class="table-view" id="contact-list">
+				</ul>
+			</div>
+
+		</div>
+		<div id="ViewMessageModal" class="modal">
+			<header class="bar bar-nav">
+				<a class="btn btn-link btn-nav pull-left" href="#MessageListModal">Back</a>
+				<h1 class="title">Messenger</h1>
+			</header>
+
+			<div class="content" id="sendmessage">
+				<!-- read through localStorage for contacts -->
+				<form>
+<!--					<button class="btn btn-primary btn-block">TAKE A PICTURE</button>-->
+				    <canvas id="canvas4reciever"></canvas>
+					<input type="text" id="rec_message" placeholder="Full name">
+					<!--					<input type="search" placeholder="Search">-->
+					<textarea rows="5"></textarea>
+					<button class="btn btn-positive btn-block">DELETE</button>
+				</form>
+
+			</div>
+
+		</div>
+		<div id="SendModal" class="modal">
+			<header class="bar bar-nav">
+				<a class="btn btn-link btn-nav pull-left" href="#MessageListModal">Back</a>
+				<h1 class="title">Messenger</h1>
+			</header>
+
+			<div class="content" id="sendmessage">
+				<!-- read through localStorage for contacts -->
+				<form>
+					<button class="btn btn-primary btn-block">TAKE A PICTURE</button>
+					<input type="text" placeholder="Full name">
+					<!--					<input type="search" placeholder="Search">-->
+					<textarea rows="5"></textarea>
+					<button class="btn btn-positive btn-block">SEND</button>
+				</form>
+
+			</div>
+
+		</div>
+
+
+
+	</div>
+
+	<script type="text/javascript" src="cordova.js"></script>
+	<!-- include the compiled Ratchet JS -->
+	<script src="js/ratchet.min.js"></script>
+	<script scr="js/bits-1.js"></script>
+	<script src="js/User.js"></script>
+	<script src="js/index.js"></script>
+</body>
+
+</html>
